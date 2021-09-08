@@ -1,4 +1,4 @@
-package com.devsuperior.dsvendascontrollers;
+package com.devsuperior.dsvendas.controllers;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import com.devsuperior.dsvendas.dto.SellerDTO;
 import com.devsuperior.dsvendas.services.SellerService;
 
 @RestController
-@RequestMapping()
+@RequestMapping(value = "/sellers")
 public class SellerController {
 	
 	@Autowired
@@ -24,9 +24,5 @@ public class SellerController {
 		return ResponseEntity.ok().body(list);
 	}
 	
-	@GetMapping(value = "/hello")
-	public String hello() {
-		return "teste";
-	}
-
+	
 }
