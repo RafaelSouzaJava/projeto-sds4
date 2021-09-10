@@ -14,15 +14,31 @@ public class SaleDTO implements Serializable{
 	private Double amount;
 	private LocalDate date;
 	
+	private SellerDTO seller;
+	
 	public SaleDTO() {
 	}
 	
+	
+	
+	public SaleDTO(Long id, Integer visited, Integer deals, Double amount, LocalDate date, SellerDTO seller) {
+		this.id = id;
+		this.visited = visited;
+		this.deals = deals;
+		this.amount = amount;
+		this.date = date;
+		this.seller = seller;
+	}
+
+
+
 	public SaleDTO(Sale sale) {
 		this.id = sale.getId();
 		this.visited = sale.getVisited();
 		this.deals = sale.getDeals();
 		this.amount = sale.getAmount();
 		this.date = sale.getDate();
+		this.seller = new SellerDTO(sale.getSeller());
 	}
 
 	public Long getId() {
@@ -63,6 +79,16 @@ public class SaleDTO implements Serializable{
 
 	public void setDate(LocalDate date) {
 		this.date = date;
+	}
+
+
+
+	public SellerDTO getSeller() {
+		return seller;
+	}
+
+	public void setSeller(SellerDTO seller) {
+		this.seller = seller;
 	}
 	
 	
